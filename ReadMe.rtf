@@ -1,57 +1,18 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2822
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Bold;\f1\froman\fcharset0 Times-Roman;\f2\fswiss\fcharset0 Helvetica;
-\f3\fmodern\fcharset0 Courier;}
-{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
-{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
-{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}}{\leveltext\leveltemplateid1\'01\'00;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}
-{\list\listtemplateid2\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat6\levelspace360\levelindent0{\*\levelmarker \{decimal\}}{\leveltext\leveltemplateid101\'01\'00;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid2}}
-{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
-\paperw11900\paperh16840\margl1440\margr1440\vieww31720\viewh18500\viewkind0
-\deftab720
-\pard\pardeftab720\sa321\partightenfactor0
+Probabilistic models, compressible interactions, and neural coding
+This repository contains a cleaned and documented implementation of codes used for the manuscript. The experimental is available from [1] and [2].
 
-\f0\b\fs48 \cf0 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 Probabilistic models, compressible interactions, and neural coding\
-\pard\pardeftab720\sa240\partightenfactor0
-
-\f1\b0\fs24 \cf0 This repository contains a cleaned and documented implementation of codes used for the manuscript. The experimental is available from [1] and [2].\
-[1] \cf2 \outl0\strokewidth0 Tka\uc0\u269 ik, G., Marre, O., Amodei, D., Schneidman, E., Bialek, W., & Berry, M. J. (2014). Searching for collective behavior in a large network of sensory neurons. PLoS computational biology, 10(1), e1003408.\
+[1] Tkačik, G., Marre, O., Amodei, D., Schneidman, E., Bialek, W., & Berry, M. J. (2014). Searching for collective behavior in a large network of sensory neurons. PLoS computational biology, 10(1), e1003408.
 [2] Meshulam, L., Gauthier, J. L., Brody, C. D., Tank, D. W., & Bialek, W. (2017). Collective behavior of place and non-place neurons in the hippocampal network. Neuron, 96(5), 1178-1191.
-\f2\fs32 \
-\
 
-\f1\fs24 \cf0 \outl0\strokewidth0 \strokec2 Figure 5 and figure 6: An effective-field analysis for binary neural population recordings. The code estimates the conditional effective field of a target neuron given the state of a downstream group of neurons, computes uncertainty by repeated subsampling, and fits low-order interaction models to the inferred field.\
-\pard\pardeftab720\sa298\partightenfactor0
-
-\f0\b\fs36 \cf0 Overview\
-\pard\pardeftab720\sa240\partightenfactor0
-
-\f1\b0\fs24 \cf0 The workflow is:\
-\pard\tx220\tx720\pardeftab720\li720\fi-720\sa240\partightenfactor0
-\ls1\ilvl0\cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	1	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 Load binary neural activity data.\
-\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	2	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 Select a target neuron and a downstream group of 
-\f3\fs26 K
-\f1\fs24  neurons.\
-\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	3	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 Encode the downstream population state as a binary integer.\
-\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	4	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 Estimate the conditional firing probability of the target neuron for each observed downstream state.\
-\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	5	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 Convert that probability into an effective field\
-\pard\tx220\tx720\pardeftab720\li720\fi-720\sa240\partightenfactor0
-\ls2\ilvl0\cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	6	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 Estimate error bars by repeated subsampling across experiments.\
-\ls2\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	7	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 Fit a low-order interaction model (for example, pairwise) to the inferred effective field.\
-\pard\pardeftab720\sa298\partightenfactor0
-
-\f0\b\fs36 \cf0 Input data\
-\pard\pardeftab720\sa240\partightenfactor0
-
-\f1\b0\fs24 \cf0 The repository does 
-\f0\b not
-\f1\b0  include the original datasets. You must provide your own files and update the paths in 
-\f3\fs26 main()
-\f1\fs24  accordingly. See references above to access the original data.}
+Figure 5 and figure 6: An effective-field analysis for binary neural population recordings. The code estimates the conditional effective field of a target neuron given the state of a downstream group of neurons, computes uncertainty by repeated subsampling, and fits low-order interaction models to the inferred field.
+Overview
+The workflow is:
+	1	Load binary neural activity data.
+	2	Select a target neuron and a downstream group of K neurons.
+	3	Encode the downstream population state as a binary integer.
+	4	Estimate the conditional firing probability of the target neuron for each observed downstream state.
+	5	Convert that probability into an effective field
+	6	Estimate error bars by repeated subsampling across experiments.
+	7	Fit a low-order interaction model (for example, pairwise) to the inferred effective field.
+Input data
+The repository does not include the original datasets. You must provide your own files and update the paths in main() accordingly. See references above to access the original data.
